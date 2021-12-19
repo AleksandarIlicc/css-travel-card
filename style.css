@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Rubik', sans-serif;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: cornsilk;
+}
+
+.container {
+    position: relative;
+    width: 30rem;
+    height: 30rem;
+    background: rgb(253, 251, 240);
+    border: 5px solid pink;
+    border-radius: 2rem;
+    box-shadow: -15px 10px 12px rgba(0,0,0,.4);
+}
+
+.circle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    height: 10rem;
+    background: rgb(253, 251, 240);
+    border: solid 5px pink;
+    border-radius: 50%;
+    box-shadow: inset -3px -3px 5px rgba(0,0,0,.275),
+                inset 3px 3px 5px rgba(0,0,0,.275),
+                -3px 4px 5px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle--two {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    box-shadow: -20px 12px 15px rgba(0,0,0,.4);
+    z-index: -1;
+}
+
+.icon--top {
+    font-size: 4.5rem;
+}
+
+.one {
+    width: 100%;
+    height: 60%;
+    padding: 2rem;
+    box-shadow: inset 3px 3px 5px rgba(0,0,0,.275),
+                inset -3px -3px 5px rgba(0,0,0,.275);
+    border-top-left-radius: 1.7rem;
+    border-top-right-radius: 1.7rem;
+    border-bottom: 5px solid pink;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.para {
+    text-align: center;
+}
+
+.para--main {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 4rem;
+}
+
+.para--sub {
+    margin-top: 1rem;
+}
+
+.two {
+    width: 100%;
+    height: 40%;
+    box-shadow: inset 3px 3px 5px rgba(0,0,0,.275),
+                inset -3px -3px 5px rgba(0,0,0,.275);
+    border-bottom-left-radius: 1.7rem;
+    border-bottom-right-radius: 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.call {
+    position: relative;
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    box-shadow: -10px 3px 9px rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .3s ease;
+    cursor: pointer;
+}
+
+.call:hover {
+    transform: translateY(-.7rem);
+}
+
+.call:active {
+    transform: translateY(0);
+}
+
+.accept::before,
+.decline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 4.7rem;
+    height: 4.7rem;
+    border-radius: 50%;
+}
+
+.accept::before {
+    background: rgb(156, 230, 82);
+    box-shadow: inset -3px -3px 9px rgba(0,0,0, .2),
+                inset 1px 1px 9px rgba(0, 0, 0, .2);
+}
+
+.accept {
+    background: rgb(156, 230, 82);
+}
+
+.decline::before {
+    background: rgb(252, 117, 112);
+    box-shadow: inset -3px -3px 9px rgba(0,0,0, .2),
+                inset 1px 1px 9px rgba(0, 0, 0, .2);
+}
+
+.decline {
+    background: rgb(252, 117, 112);
+}
+
+.icon {
+    font-size: 2.3rem;
+    color: white;
+    z-index: 1;
+}
+
+.icon--accept {
+    transform: rotate(90deg);
+    filter: drop-shadow(3px 5px 4px rgb(0, 0, 0, 0.7));
+}
+
+.icon--decline {
+    transform: rotate(-135deg);
+    filter: drop-shadow(-3px -3px 3px rgb(0, 0, 0, 0.7));
+}
+
+.response {
+    margin-top: 1rem;
+}
