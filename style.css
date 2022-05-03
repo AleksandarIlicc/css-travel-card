@@ -26,10 +26,10 @@ body {
 
 .container {
     position: relative;
-    width: 30rem;
-    height: 30rem;
+    width: 40rem;
+    height: 40rem;
     background: rgb(253, 251, 240);
-    border: 5px solid pink;
+    border: 10px solid pink;
     border-radius: 2rem;
     box-shadow: -15px 10px 12px rgba(0,0,0,.4);
 }
@@ -39,10 +39,10 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10rem;
-    height: 10rem;
+    width: 14rem;
+    height: 14rem;
     background: rgb(253, 251, 240);
-    border: solid 5px pink;
+    border: solid 8px pink;
     border-radius: 50%;
     box-shadow: inset -3px -3px 5px rgba(0,0,0,.275),
                 inset 3px 3px 5px rgba(0,0,0,.275),
@@ -57,8 +57,8 @@ body {
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 10rem;
-    height: 10rem;
+    width: 14rem;
+    height: 14rem;
     border-radius: 50%;
     box-shadow: -20px 12px 15px rgba(0,0,0,.4);
     z-index: -1;
@@ -74,9 +74,9 @@ body {
     padding: 2rem;
     box-shadow: inset 3px 3px 5px rgba(0,0,0,.275),
                 inset -3px -3px 5px rgba(0,0,0,.275);
-    border-top-left-radius: 1.7rem;
-    border-top-right-radius: 1.7rem;
-    border-bottom: 5px solid pink;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom: 10px solid pink;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,8 +102,8 @@ body {
     height: 40%;
     box-shadow: inset 3px 3px 5px rgba(0,0,0,.275),
                 inset -3px -3px 5px rgba(0,0,0,.275);
-    border-bottom-left-radius: 1.7rem;
-    border-bottom-right-radius: 1.7rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -111,8 +111,8 @@ body {
 
 .call {
     position: relative;
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 6.5rem;
+    height: 6.5rem;
     border-radius: 50%;
     box-shadow: -10px 3px 9px rgba(0,0,0,.5);
     display: flex;
@@ -129,8 +129,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 4.7rem;
-    height: 4.7rem;
+    width: 5.7rem;
+    height: 5.7rem;
     border-radius: 50%;
 }
 
@@ -152,7 +152,6 @@ body {
     height: 5.5rem;
     background: rgb(156, 230, 82);
     border-radius: 50%;
-    animation: pulsOne 2s linear infinite;
     z-index: -1;
 }
 
@@ -163,8 +162,15 @@ body {
     background: transparent;
     border: 1px solid rgb(89, 179, 0);
     border-radius: 50%;
-    animation: pulsTwo 2s infinite ease-in-out;
     z-index: -1;
+}
+
+.puls--1.puls--1 {
+    animation: pulsOne 2s linear infinite;
+}
+
+.puls--2.puls--2 {
+    animation: pulsTwo 2s infinite ease-in-out;
 }
 
 .ring-ring {
@@ -201,33 +207,26 @@ body {
         opacity: .1;
     }
     30% {
-        transform: scale(1.2);
+        transform: scale(1.3);
         opacity: .7;
     }
     100% {
-        transform: scale(1.3);
+        transform: scale(1.4);
         opacity: .1;
     }
-
-    /* 0%, 100% {
-        transform: scale(1);
-    }
-    30%, 50%, 70% {
-        transform: scale(1.2);
-    } */
 }
 
 @keyframes pulsTwo {
     0% {
-        transform: rotate(0) scale(1) skew(1deg);
+        transform: scale(1);
         opacity: .1
     }
     30% {
-        transform: rotate(0) scale(1.5) skew(1deg);
+        transform: scale(1.7);
         opacity: .5
     }
     100% {
-        transform: rotate(0) scale(1.7) skew(1deg);
+        transform: scale(1.9);
         opacity: .1
     }
 }
@@ -243,7 +242,7 @@ body {
 }
 
 .icon {
-    font-size: 2.3rem;
+    font-size: 3rem;
     color: white;
     z-index: 1;
 }
@@ -260,4 +259,74 @@ body {
 
 .response {
     margin-top: 1rem;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    height: 90vh;
+    background: lightsteelblue;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    position: relative;
+    width: 35rem;
+    height: 45rem;
+    border-radius: 2rem;
+    background: wheat;
+    overflow: hidden;
+}
+
+.card--img {
+    position: relative;
+    width: 35rem;
+    height: 30rem;
+}
+
+.card--img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgb(154, 205, 50);
+    mix-blend-mode: multiply;
+}
+
+.card--img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info {
+    position: absolute;
+    bottom: -4rem;
+    left: -3rem;
+    width: 35rem;
+    height: 20rem;
+    border-radius: 2rem;
+    background: linear-gradient(to bottom, rgb(45, 45, 45), rgb(123, 255, 0));
+    transform: rotate(-15deg) scale(1.3);
+}
+
+.info * {
+    transform: rotate(0) scale(1);
+}
+
+.info--container {
+    isolation: isolate;
+    height: 15rem;
+    padding: 2rem;
+}
+
+p {
+    font-size: 1.4rem;
+    color: rgb(255, 255, 255);
 }
