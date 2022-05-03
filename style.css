@@ -16,15 +16,18 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Rubik', sans-serif;
-    height: 100vh;
     width: 100%;
     background: rgb(255, 248, 220);
+}
+
+.container {
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.container {
+.travel--container {
     position: relative;
     width: 40rem;
     max-width: 90%;
@@ -263,30 +266,28 @@ body {
 }
 
 .modal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
     position: absolute;
-    transform: scale(0);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
     width: 100vw;
     max-width: 90%;
+    padding: 2rem;
+    margin-top: 4rem;
     transition: transform .3s ease;
     z-index: 100;
 }
 
-
-
 .modal.show {
-    transform: scale(1);
-}
-
-.cards {
-    display: grid;
-    place-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 2rem;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .card {
     position: relative;
+    height: 52rem;
     border-radius: 2rem;
     background: wheat;
     box-shadow: 3px 3px 9px rgba(0,0,0, .5);
@@ -353,11 +354,11 @@ body {
 
 .background {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: rgba(0, 0, 0, .7);
 }
 
@@ -370,7 +371,7 @@ body {
     position: absolute;
     top: 2.3rem;
     right: 2.3rem;
-    z-index: 1;
+    z-index: 100;
     cursor: pointer;
 }
 
@@ -413,8 +414,28 @@ body {
     width: 6rem;
 }
 
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: .5rem;
+    box-shadow: inset 0 0 1rem rgba(0,0,0, .25);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background:rgb(207, 151, 151);
+}
+
 @media only screen and (max-width: 56.25em) {
     html {
         font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 31.25em) {
+    .modal {
+        height: 100%;
     }
 }
