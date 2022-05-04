@@ -275,7 +275,9 @@ body {
     transform: translate(-50%, -50%) scale(0);
     width: 100vw;
     max-width: 90%;
+    height: 90vh;
     padding: 2rem;
+    overflow: scroll;
     transition: transform .3s ease;
     z-index: 100;
 }
@@ -304,7 +306,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: rgb(154, 205, 50);
+    background: rgb(208, 208, 208);
     mix-blend-mode: multiply;
 }
 
@@ -431,11 +433,8 @@ body {
     html {
         font-size: 50%;
     }
-}
 
-@media only screen and (max-width: 31.25em) {
     .modal {
-        height: 100%;
-        margin-top: 4rem;
+        overflow: scroll;
     }
 }
